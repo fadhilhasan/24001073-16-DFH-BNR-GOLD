@@ -1,0 +1,262 @@
+/**************************/
+/* GENERAL AND HELPER */
+/**************************/
+.text-justify {
+  text-align: justify;
+}
+
+/**************************/
+/* HEADER */
+/**************************/
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.4s;
+
+  /*sticky*/
+  height: 7.6rem;
+  padding: 0 4.8rem;
+  position: relative;
+}
+
+.logo {
+  width: 7.2rem;
+}
+
+/**************************/
+/* NAVIGATION */
+/**************************/
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+
+  &:hover,
+  &:active {
+    color: var(--bs-primary);
+  }
+}
+
+/**************************/
+/* FAQ */
+/**************************/
+.faq {
+  padding: 9px;
+  border: 1px solid #000;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s;
+
+  p {
+    padding-top: 1rem;
+    line-height: 1.6;
+  }
+}
+
+.faq.active {
+  .answer {
+    max-height: 300px;
+    animation: fade 0.3s ease-in-out;
+  }
+
+  i {
+    transform: rotate(180deg);
+  }
+}
+
+i {
+  transition: transform 0.5s ease-in;
+}
+
+/**************************/
+/* Animation */
+/**************************/
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/**************************/
+/* MOBILE */
+/**************************/
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  display: none;
+}
+
+.icon-mobile-nav {
+  height: 2.8rem;
+  width: 2.8rem;
+  color: #333;
+  // margin-top: 2rem;
+
+  &[name="close-outline"] {
+    display: none;
+  }
+}
+
+/* STICKY NAVIGATION */
+.sticky {
+  .navigation {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 6rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 999;
+    box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.2);
+  }
+
+  .section-hero {
+    margin-top: 9.6rem;
+  }
+}
+
+.footer-img {
+  width: 50% !important;
+}
+
+/**************************/
+/* QUERIES */
+/**************************/
+@media (max-width: 768px) {
+  // Header
+  .container-fluid {
+    padding-top: 3rem !important;
+  }
+
+  .navigation {
+    height: 6rem;
+    padding: 0 2.4rem;
+  }
+
+  .p-sm {
+    padding-top: 0 !important;
+  }
+
+  // General
+  .align-start {
+    display: flex;
+    flex-direction: column;
+    align-items: start !important;
+  }
+
+  .align-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .margin-bottom-sm {
+    margin-bottom: 3rem;
+  }
+
+  /* MOBILE NAVIGATION */
+  .btn-mobile-nav {
+    display: block;
+    z-index: 1000;
+  }
+
+  .main-nav {
+    background-color: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    transform: translateX(50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: 999;
+  }
+
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 1.2rem;
+  }
+
+  // Overlay
+
+  .btn-mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%; /* Setengah dari lebar layar */
+    height: 100vh; /* Sesuaikan dengan tinggi layar */
+    background-color: rgba(0, 0, 0, 0.6); /* Warna hitam transparan */
+    z-index: 99; /* Pastikan lebih rendah dari z-index button */
+    display: none; /* Sembunyikan secara default */
+  }
+
+  .nav-open .btn-mobile-nav-overlay {
+    display: block; /* Tampilkan saat navbar dibuka */
+  }
+}
