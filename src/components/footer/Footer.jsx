@@ -47,7 +47,7 @@ const Footer = () => {
             </div>
 
             <div className="col-md-3 mb-3">
-              <div className="d-flex flex-column align-items-center align-start">
+              <div className="d-flex flex-column align-items-lg-center align-start">
                 <ul className="list-unstyled">
                   <li className="list-item mb-3">
                     <a className="text-decoration-none text-dark" href="#">

@@ -168,10 +168,6 @@ i {
     padding: 0 2.4rem;
   }
 
-  .p-sm {
-    padding-top: 0 !important;
-  }
-
   // General
   .align-start {
     display: flex;
@@ -249,14 +245,14 @@ i {
     position: fixed;
     top: 0;
     right: 0;
-    width: 100%; /* Setengah dari lebar layar */
-    height: 100vh; /* Sesuaikan dengan tinggi layar */
-    background-color: rgba(0, 0, 0, 0.6); /* Warna hitam transparan */
-    z-index: 99; /* Pastikan lebih rendah dari z-index button */
-    display: none; /* Sembunyikan secara default */
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+    display: none;
   }
 
   .nav-open .btn-mobile-nav-overlay {
-    display: block; /* Tampilkan saat navbar dibuka */
+    display: block;
   }
 }

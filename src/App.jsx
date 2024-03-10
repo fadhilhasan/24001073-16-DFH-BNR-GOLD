@@ -1,8 +1,3 @@
-import "./scss/app.scss";
-import "./scss/bootstrap.scss";
-import "./scss/fontawesome.scss";
-import "./js/bootstrap.bundle.min.js";
-import "./js/main.js";
 import Header from "./components/header/Header";
 import About from "./components/rental/Rental";
 import Why from "./components/why/Why";

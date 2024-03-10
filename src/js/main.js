@@ -24,14 +24,14 @@
 // );
 // obs.observe(sectionHeroEl);
 
-// // FAQ
-// const faqs = document.querySelectorAll(".faq");
+// FAQ
+const faqs = document.querySelectorAll(".faq");
 
-// faqs.forEach((faq) => {
-//   faq.addEventListener("click", () => {
-//     faq.classList.toggle("active");
-//   });
-// });
+faqs.forEach((faq) => {
+  faq.addEventListener("click", () => {
+    faq.classList.toggle("active");
+  });
+});
 
 // // Current year
 // const yearEl = document.querySelector(".year");
